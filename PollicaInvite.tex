@@ -1,0 +1,77 @@
+%!TEX program = xelatex 	
+\documentclass[12pt]{article}
+\input{FlipLetterHeader} 	% May 2021 style; see bottom of this page for notes
+\input{FlipLetter_Packages}	% Flip's additional macros
+
+%% For BASH scripting automated invites
+% https://tex.stackexchange.com/questions/1492/passing-parameters-to-a-document
+% EXAMPLE: xelatex "\def\participantname{Seyda Ipek} \def\invitedspeaker{1} \input{PollicaInvite.tex}"
+\ifdefined\participantname
+  \newcommand{\participant}{\participantname\xspace}
+\else
+  \newcommand{\participant}{participant\xspace}
+\fi
+
+\ifdefined\invitedspeaker
+  \newcommand{\invitationline}{The organizing committee formally invites you to participate and present at this workshop as an invited speaker.\xspace}
+  \newcommand{\localexpenses}{As an invited speaker, we are happy to \emph{waive the conference fee and local accommodation costs} for your visit.\xspace}
+\else
+  \newcommand{\invitationline}{The organizing committee formally invites you to participate it this workshop.\xspace}
+  \newcommand{\localexpenses}{}
+\fi
+
+\begin{document}
+
+\thispagestyle{flipsfirstpage} 	% fancy header for 1st apge
+\vspace*{.25in}
+\today
+\bigskip  
+
+
+Dear \participant, \par \bigskip 
+
+The first \emph{Pollica Summer Workshop on Dark Matter} will take place from \textbf{6--17 June 2022}. We aim to bring together leading theorists and experimentalists working on the physics and astrophysics of dark matter in the beautiful medieval castle, Castello dei Principi Capano, in Pollica, Italy. \invitationline
+%% PARTICIPATE
+% The organizing committee formally invites you to participate in this workshop.
+%% SPEAK
+% The organizing committee formally invites you to participate and present at this workshop as an invited speaker. 
+
+The workshop is sponsored by the Istituto Nazionale di Fisica Nucleare (\acro{INFN}), Università Delgi Studi di Napoli Federico \acro{II}, Università Delgi Studi di Salerno, and Comune Di Pollica.
+
+The conference fee is of 250€. By agreement with the local bed \& breakfast association, participants are offered a flat rate for accommodations distributed in the area. 
+%
+%% INVITED
+% As an invited speaker, we are happy to \emph{waive the conference fee and local accommodation costs} for your visit.
+\localexpenses
+% 
+Details about the program and logistics are available on the conference webpage: 
+
+\url{https://agenda.infn.it/event/20506/}.
+
+
+Please feel free to contact us at \texttt{darkpollica@gmail.com} with any questions. If you have not already done so, we request your confirmation of participation by \textbf{15 March, 2022}.
+
+
+
+\vspace{1cm}
+\hspace{.5\textwidth}
+\begin{minipage}[]{5in}
+Sincerely, \par \medskip
+
+
+% \includegraphics[height=3\baselineskip]{FlipSignature.png} \par
+\includegraphics[height=3\baselineskip]{TEMPSignature.png} \par
+Flip Tanedo \par
+on behalf of the Dark Pollica\par
+Organizing Committee
+\end{minipage}
+\vspace{2cm}
+
+\includegraphics[height=2cm]{figures/logo1.jpeg}\;
+\includegraphics[height=2cm]{figures/logo2.png}\;
+\includegraphics[height=2cm]{figures/logo3.jpeg}\;
+\includegraphics[height=2cm]{figures/logo4.png}
+
+%% END DOCUMENT FORMATTING
+\ThisLLCornerWallPaper{1}{footerbgsmall} % using wallpaper
+\end{document} 
