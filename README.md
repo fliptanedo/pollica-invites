@@ -2,6 +2,8 @@
 Bash + XeLaTeX script for generating invitation letters for Pollica
 
 ## Known issues
+* CSV file must end with a newline. 
+* Lines with data should not have spaces, e.g. `Last,First` not `Last,First ` or `Last, First `. 
 
 ## Files
 
