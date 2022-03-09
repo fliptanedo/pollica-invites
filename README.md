@@ -1,6 +1,9 @@
 # pollica-invites
 Bash + XeLaTeX script for generating invitation letters for Pollica
 
+## Known issues
+* 3/9/22: the input csv file needs each line to end with a space and a newline
+
 ## Files
 
 `PollicaInvite.tex` is a XeLaTeX letter template. It assumes that one has the Rift and Fira Sans fonts available. (You can edit this in `FlipLetteHeader.tex`.) The `\figures` folder contains images.
